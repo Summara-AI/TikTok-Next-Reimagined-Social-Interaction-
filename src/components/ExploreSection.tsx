@@ -11,12 +11,12 @@ const CATEGORIES = [
 ];
 
 const TRENDING_VIDEOS = [
-  { id: 1, url: 'https://cdn.pixabay.com/video/2021/04/12/70876-537443152_large.mp4', views: '2.4M', tag: 'photography' },
-  { id: 2, url: 'https://cdn.pixabay.com/video/2022/08/21/128695-742215886_large.mp4', views: '890K', tag: 'design' },
-  { id: 3, url: 'https://cdn.pixabay.com/video/2023/10/20/185782-876378415_large.mp4', views: '1.2M', tag: 'gaming' },
-  { id: 4, url: 'https://cdn.pixabay.com/video/2022/01/21/104996-667468132_large.mp4', views: '4.1M', tag: 'music' },
-  { id: 5, url: 'https://cdn.pixabay.com/video/2021/04/12/70876-537443152_large.mp4', views: '500K', tag: 'photography' },
-  { id: 6, url: 'https://cdn.pixabay.com/video/2022/08/21/128695-742215886_large.mp4', views: '1.1M', tag: 'design' },
+  { id: 1, url: 'https://videos.pexels.com/video-files/4069480/4069480-sd_640_360_25fps.mp4', views: '2.4M', tag: 'photography' },
+  { id: 2, url: 'https://videos.pexels.com/video-files/4311145/4311145-sd_640_360_24fps.mp4', views: '890K', tag: 'design' },
+  { id: 3, url: 'https://videos.pexels.com/video-files/4069480/4069480-sd_640_360_25fps.mp4', views: '1.2M', tag: 'gaming' },
+  { id: 4, url: 'https://videos.pexels.com/video-files/4311145/4311145-sd_640_360_24fps.mp4', views: '4.1M', tag: 'music' },
+  { id: 5, url: 'https://videos.pexels.com/video-files/4069480/4069480-sd_640_360_25fps.mp4', views: '500K', tag: 'photography' },
+  { id: 6, url: 'https://videos.pexels.com/video-files/4311145/4311145-sd_640_360_24fps.mp4', views: '1.1M', tag: 'design' },
 ];
 
 const ExploreSection: React.FC = () => {

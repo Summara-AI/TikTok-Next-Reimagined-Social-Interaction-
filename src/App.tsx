@@ -18,7 +18,7 @@ const MOCK_VIDEOS = [
     likes: '1.2M',
     comments: '45.2K',
     shares: '12.4K',
-    videoUrl: 'https://cdn.pixabay.com/video/2021/04/12/70876-537443152_large.mp4',
+    videoUrl: 'https://videos.pexels.com/video-files/4069480/4069480-sd_640_360_25fps.mp4',
     avatar: 'https://i.pravatar.cc/150?u=creative_vibes',
   },
   {
@@ -29,7 +29,7 @@ const MOCK_VIDEOS = [
     likes: '892K',
     comments: '12.8K',
     shares: '5.2K',
-    videoUrl: 'https://cdn.pixabay.com/video/2023/10/20/185782-876378415_large.mp4',
+    videoUrl: 'https://videos.pexels.com/video-files/4311145/4311145-sd_640_360_24fps.mp4',
     avatar: 'https://i.pravatar.cc/150?u=tech_guru',
   },
 ];
