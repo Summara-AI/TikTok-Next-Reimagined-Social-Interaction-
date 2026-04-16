@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Settings, Grid, Heart, Bookmark, Edit2, Share2, X, Check, Camera, User } from 'lucide-react';
+import { Settings, Grid, Heart, Bookmark, Edit2, Share2, X, Check, Camera } from 'lucide-react';
 import { cn } from '../utils/cn';
 
 const USER_DATA = {

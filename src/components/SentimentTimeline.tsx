@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 import * as d3 from 'd3';
 import { Smile, TrendingUp } from 'lucide-react';
 
@@ -6,9 +6,9 @@ const SentimentTimeline: React.FC = () => {
   const svgRef = useRef<SVGSVGElement>(null);
 
   // Sample sentiment data: [time, sentiment_value]
-  const data = [
+  const data = useMemo(() => [
     [0, 0.5], [5, 0.7], [10, 0.4], [15, 0.9], [20, 0.6], [25, 0.8], [30, 0.5]
-  ];
+  ], []);
 
   useEffect(() => {
     const render = () => {
@@ -58,7 +58,7 @@ const SentimentTimeline: React.FC = () => {
       svg.append("path")
         .datum(data)
         .attr("fill", "url(#sentiment-gradient)")
-        .attr("d", area as any);
+        .attr("d", area as unknown as string);
 
       // Draw Line
       svg.append("path")
@@ -66,7 +66,7 @@ const SentimentTimeline: React.FC = () => {
         .attr("fill", "none")
         .attr("stroke", "#69C9D0")
         .attr("stroke-width", 2)
-        .attr("d", line as any);
+        .attr("d", line as unknown as string);
 
       // Add dynamic dot
       const dot = svg.append("circle")
@@ -75,7 +75,6 @@ const SentimentTimeline: React.FC = () => {
         .attr("stroke", "white")
         .attr("stroke-width", 1.5);
 
-      let animationId: any;
       function animateDot() {
         dot.transition()
           .duration(10000)
@@ -102,7 +101,7 @@ const SentimentTimeline: React.FC = () => {
     render();
     window.addEventListener('resize', render);
     return () => window.removeEventListener('resize', render);
-  }, []);
+  }, [data]);
 
   return (
     <div className="w-full bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-white/10 mt-4 overflow-hidden group hover:bg-white/10 transition-all cursor-crosshair">

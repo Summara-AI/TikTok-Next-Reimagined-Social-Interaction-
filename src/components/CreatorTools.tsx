@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { MessageSquare, Mic, Video, Send, X, Star, Zap, Sparkles, Loader2 } from 'lucide-react';
 
 interface CreatorToolsProps {

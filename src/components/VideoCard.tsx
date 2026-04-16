@@ -106,14 +106,20 @@ const VideoCard: React.FC<VideoCardProps> = ({
     }
   }, [isMuted]);
 
-  const [floatingHearts, setFloatingHearts] = useState<{ id: number; x: number; y: number }[]>([]);
+  const [floatingHearts, setFloatingHearts] = useState<{ id: number; x: number; y: number; randomX: number; randomRotate: number }[]>([]);
 
   const handleDoubleClick = (e: React.MouseEvent) => {
     setShowHeart(true);
     setIsLiked(true);
     
     // Add floating heart
-    const newHeart = { id: Date.now(), x: e.clientX, y: e.clientY };
+    const newHeart = { 
+      id: Date.now(), 
+      x: e.clientX, 
+      y: e.clientY,
+      randomX: Math.random() * 100 - 50,
+      randomRotate: Math.random() * 40 - 20
+    };
     setFloatingHearts(prev => [...prev, newHeart]);
     
     setTimeout(() => setShowHeart(false), 800);
@@ -296,9 +302,9 @@ const VideoCard: React.FC<VideoCardProps> = ({
             animate={{ 
               opacity: 0, 
               y: heart.y - 250, 
-              x: heart.x + (Math.random() * 100 - 50),
+              x: heart.x + heart.randomX,
               scale: 1.5,
-              rotate: Math.random() * 40 - 20
+              rotate: heart.randomRotate
             }}
             transition={{ duration: 1.5, ease: "easeOut" }}
             className="fixed pointer-events-none z-50"

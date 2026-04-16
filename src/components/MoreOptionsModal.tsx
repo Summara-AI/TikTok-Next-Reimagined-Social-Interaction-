@@ -60,9 +60,12 @@ const MoreOptionsModal: React.FC<MoreOptionsModalProps> = ({ onClose, onAction, 
                 "w-16 h-16 rounded-2xl flex items-center justify-center text-white shadow-xl transition-all group-hover:rotate-6",
                 action.id === 'save' && isSaved ? "bg-yellow-600 shadow-[0_0_20px_rgba(234,179,8,0.4)]" : action.color
               )}>
-                {React.cloneElement(action.icon as React.ReactElement, { 
-                  className: action.id === 'save' && isSaved ? "fill-white" : "" 
-                })}
+                <div className={cn(
+                  "transition-all",
+                  action.id === 'save' && isSaved ? "text-white" : ""
+                )}>
+                  {React.cloneElement(action.icon as React.ReactElement)}
+                </div>
               </div>
               <span className="text-[10px] font-bold text-white/60 uppercase tracking-widest">
                 {action.id === 'save' && isSaved ? 'Saved' : action.name}

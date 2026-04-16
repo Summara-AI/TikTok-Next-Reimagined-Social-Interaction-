@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Search, Edit3, Circle, Send, MoreHorizontal, Phone, Video, Smile, Image as ImageIcon } from 'lucide-react';
 import { cn } from '../utils/cn';
 
@@ -36,7 +36,7 @@ const CHATS = [
 const MessagesSection: React.FC = () => {
   const [activeChatId, setActiveChatId] = useState<number | null>(null);
   const [message, setMessage] = useState('');
-  const [chatHistories, setChatHistories] = useState<Record<number, any[]>>(
+  const [chatHistories, setChatHistories] = useState<Record<number, Array<{id: number; text: string; sender: string}>>>(
     Object.fromEntries(CHATS.map(c => [c.id, c.history]))
   );
 
